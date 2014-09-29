@@ -20,6 +20,8 @@
         function (pos) {
             var lat=pos.coords.latitude;
             var lon=pos.coords.longitude;
+            var distance = 20
+            var center_point = [40.71, 100.23]
             var location ="<li>"+"緯度：" + lat + "</li>";
             location += "<li>"+"経度：" + lon + "</li>";
             document.getElementById("location").innerHTML = location;
@@ -37,7 +39,11 @@
                 ]);
                 handler.bounds.extendWith(markers);
                 handler.fitMapToBounds();
+                handler.getMap().setZoom(12);
+                //緯度と経度から距離計算 a:基準、b:現在地
             });
+            var a_latitude = <%=raw @users.last.latitude %>;
+            var b_longitude = <%=raw @users.last.longitude %>;
         },
         // 位置情報取得失敗時
         function (pos) {
