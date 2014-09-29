@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>YomiYome Geolocation</title>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+</head>
+<body>
+<h1>Map#index</h1>
+<p>Find me in app/views/map/index.html.erb</p>
+
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+</div>
+
+<script type="text/javascript">
+handler = Gmaps.build('Google');
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers(<%=raw @hash.to_json %>);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+});
+    if (navigator.geolocation) {
+        // 現在の位置情報取得を実施
+        navigator.geolocation.getCurrentPosition(
+        // 位置情報取得成功時
+        function (pos) { 
+                var location ="<li>"+"緯度：" + pos.coords.latitude + "</li>";
+                location += "<li>"+"経度：" + pos.coords.longitude + "</li>";
+                document.getElementById("location").innerHTML = location;
+        },
+        // 位置情報取得失敗時
+        function (pos) { 
+                var location ="<li>位置情報が取得できませんでした。</li>";
+                document.getElementById("location").innerHTML = location;
+        });
+    } else {
+        window.alert("本ブラウザではGeolocationが使えません");
+    }
+</script>
+<p>現在地</p>
+<ul id="location"></ul>
+</body>
+</html>
