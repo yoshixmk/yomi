@@ -46,7 +46,18 @@
             var b_location = new google.maps.LatLng(b_latitude, b_longitude);
             // 距離
             var distance = google.maps.geometry.spherical.computeDistanceBetween(a_location, b_location);
-            alert(distance);
+            //車
+            var car_time = Math.round(distance / 667);
+            var bike_time = Math.round(distance / 300);
+            var walking_time = Math.round(distance / 80);
+            var transportation = "<td>車</td>";
+            transportation += "<td>自転車</td>";
+            transportation += "<td>徒歩</td>";
+            var target = "<td>"+ car_time + "</td>";
+            target += "<td>"+ bike_time + "</td>";
+            target += "<td>"+ walking_time + "</td>";
+            document.getElementById("transportation").innerHTML = transportation;
+            document.getElementById("waiting_time").innerHTML = target;
         },
         // 位置情報取得失敗時
         function (pos) {
@@ -59,5 +70,10 @@
 </script>
 <p>現在地</p>
 <ul id="location"></ul>
+<table border=2>
+<tr id="transportation"></tr>
+<tr id="waiting_time"></tr>
+</table>
+<p>単位：(分)</p>
 </body>
 </html>
