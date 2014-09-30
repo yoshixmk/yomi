@@ -11,7 +11,6 @@
 <div style='width: 800px;'>
   <div id="map" style='width: 800px; height: 400px;'></div>
 </div>
-
 <script type="text/javascript">
     if (navigator.geolocation) {
         // 現在の位置情報取得を実施
@@ -39,14 +38,21 @@
                 handler.fitMapToBounds();
                 handler.getMap().setZoom(12);
             });
-            //緯度と経度から距離計算 a:基準、b:現在地//緯度と経度から距離計算 a:基準、b:現在地
+            //緯度と経度から距離計算 a:現在地、b:基準
             var a_latitude = lat;
             var a_longitude = lon;
-            var b_latitude = <% @users.last.latitudee %>;
-            var b_longitude = <% @users.last.longitude %>;
-            var earth_r = 6378.137;
-            var latitude_diff = b_latitude - a_latitude;	//緯度差をラジアンに
-            
+            var b_latitude = <%= raw @users.last.latitude.to_json %>;
+            var b_longitude = <%= raw @users.last.latitude.to_json %>;
+            var average_lat = (a_latitude + (b_latitude - a_latitude) / 2) * Math.PI / 180;
+            var latitude_diff = (a_latitude - b_latitude) * Math.PI / 180;
+            var longitude_diff = (a_longitude - b_longitude) * Math.PI / 180;
+            var curvature_radius = 1 - 0.00669438 * Math.pow(Math.sin(average_lat), 2);
+            var meridian_curvature_radius = 6335439.327 / Math.sqrt(Math.pow(curvature_radius, 3));//子午線曲率半径
+            var prime_vertical_circle_curvature_radius = 6378137 / Math.sqrt(curvature_radius);//卯酉線曲率半径
+            //２点間の距離
+            var distance = Math.pow(meridian_curvature_radius * latitude_diff, 2) + Math.pow(prime_vertical_circle_curvature_radius * Math.cos(average_lat) * longitude_diff, 2);
+            distance = Math.sqrt(distance);
+            alert(distance);
         },
         // 位置情報取得失敗時
         function (pos) {
