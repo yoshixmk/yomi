@@ -1,10 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2755658126">
+  <component name="DataSourceManagerImpl" format="xml" hash="1849734906">
     <data-source source="LOCAL" name="Rails yomiyome: development" uuid="a02c9bb2-2caf-4d6e-adc0-36586636323e">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails yomiyome: production" uuid="99a4bec2-b886-4837-b138-a3bdb17a6541">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-54-197-239-171.compute-1.amazonaws.com:5432:5432/d6rjsm45imq34h</jdbc-url>
+      <user-name>qafbhrbgrlcfjn</user-name>
+      <user-password>dfefdfcbdfdfdfe5dfe1dfe3dfeddfe9df92dfe8dff3dffddf9edfdcdfd8dfdadfdbdf93dfc0dfe0dffbdffcdffbdfccdffbdfc5</user-password>
       <libraries />
     </data-source>
   </component>

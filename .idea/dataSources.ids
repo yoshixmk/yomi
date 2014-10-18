@@ -3,4 +3,7 @@
   <data-source source="LOCAL" name="Rails yomiyome: development" uuid="a02c9bb2-2caf-4d6e-adc0-36586636323e">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails yomiyome: production" uuid="99a4bec2-b886-4837-b138-a3bdb17a6541">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
