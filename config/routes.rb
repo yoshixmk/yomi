@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'users'
+  root 'users#index'
   get 'map/index'
 
   resources :users
