@@ -1,5 +1,9 @@
-<h1>Listing users</h1>
-
+<%= image_tag("title.png") %>
+<br>
+<h3>使い方</h3>
+<p>　New Userから住所または住所が特定できるキーワードを入力(例：東京駅)</p>
+<p>　Show Time!で時間と位置関係を確認できます。</p>
+<br>
 <table>
   <thead>
     <tr>
@@ -27,7 +31,10 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
-
 <%= link_to 'New User', new_user_path %>
+<br>
+<br>
+<div class="actions">
+  <%= link_to 'Show Time!', map_index_path %>
+</div>
