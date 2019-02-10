@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.4'
+gem 'rails', '4.2.4'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 gem 'sqlite3', :group => [:development, :test]
@@ -34,7 +34,7 @@ gem 'bootstrap-sass', '~> 3.2.0.2'
 gem 'websocket-rails'
 
 gem 'rails_12factor', group: :production
-ruby "2.1.1"
+ruby "2.6.1"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -46,4 +46,3 @@ ruby "2.1.1"
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
