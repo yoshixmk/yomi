@@ -37,6 +37,7 @@ gem 'websocket-rails'
 gem 'rails_12factor', group: :production
 
 gem 'actionpack', '~> 4.2.5.1'
+gem 'actionview', '~> 4.2.5.1'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

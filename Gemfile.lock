@@ -176,6 +176,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionpack (~> 4.2.5.1)
+  actionview (~> 4.2.5.1)
   bootstrap-sass (~> 3.2.0.2)
   coffee-rails (~> 4.0.0)
   geocoder
