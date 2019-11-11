@@ -31,7 +31,7 @@ gem 'spring',        group: :development
 
 gem "gmaps4rails"
 gem "geocoder"
-gem 'bootstrap-sass', '~> 3.2.0.2'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'websocket-rails'
 
 gem 'rails_12factor', group: :production
