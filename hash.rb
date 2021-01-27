@@ -1,0 +1,4 @@
+require 'digest/md5'
+
+p Digest::MD5.hexdigest('8s3s1p9s7m6p9s4z3s4p6p6p2p2z1s2s3p9p1p7z3m1z5z2z2z6s5m5m7z3m7s3p7s2m6z1z1p6p1z6z6s8m1s6z2p5s2s4z2m1s8p1m5p3p7s9m2m9m5s5p7p4s6s4m8s2p7p8p4m9p8p5z7s0p4m1m7m4p4p8s6s6m8m')
+cf0c637b39938ad0ce0e797339312786
