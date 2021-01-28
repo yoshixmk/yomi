@@ -1,0 +1,13 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    pg (0.18.4)
+
+PLATFORMS
+  x86_64-darwin-20
+
+DEPENDENCIES
+  pg (~> 0.18.4)
+
+BUNDLED WITH
+   2.2.3

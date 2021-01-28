@@ -1,0 +1,33 @@
+version: '3'
+ 
+services:
+  postgres:
+    image: postgres:13.1
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password
+      PGPASSWORD: password123
+      POSTGRES_DB: yomi
+      TZ: "Asia/Tokyo"
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+ 
+  pgadmin:
+    image: dpage/pgadmin4:4.30
+    restart: always
+    ports:
+      - 1080:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: info@pg.com
+      PGADMIN_DEFAULT_PASSWORD: password
+    volumes:
+      - pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+ 
+volumes:
+  postgres:
+  pgadmin:
