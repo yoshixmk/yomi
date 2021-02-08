@@ -1,0 +1,3 @@
+[submodule "mahjong-helper"]
+	path = mahjong-helper
+	url = git@github.com:EndlessCheng/mahjong-helper.git
