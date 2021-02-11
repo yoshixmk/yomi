@@ -24,5 +24,27 @@ Only about 3 bytes can be analyzed with a normal computer 3 bytes (out of 16 byt
 Being prepared.
 
 cf / using: <https://github.com/EndlessCheng/mahjong-helper>  
-cf / log: <https://twitter.com/MSuphx>
+cf / log: <https://twitter.com/MSuphx>  
 cf / reference implementation: <https://github.com/hogeki/dlmahjong>  
+
+## dlmahjong kai
+python 3.8.7 / tensorflow 2.4.1
+
+```bash
+$ python mahjong_ai.py
+```
+
+### Learning and Save:
+```bash
+$ python mahjong_ai.py --train --save
+```
+
+### Testing:
+```bash
+$ python mahjong_ai.py --run
+```
+
+### Create training data
+```bash
+python mahjong_generator.py
+```
