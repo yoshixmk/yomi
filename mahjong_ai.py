@@ -1,6 +1,4 @@
 #-*- coding:utf-8 -*-
-import sys
-import io
 import argparse
 import time
 import tensorflow as tf
@@ -239,15 +237,12 @@ if __name__ == "__main__":
     sess = tf.compat.v1.Session()
     sess.run(tf.compat.v1.global_variables_initializer())
     sess.run(tf.compat.v1.local_variables_initializer())
+    saver = tf.compat.v1.train.Saver()
     if do_train == True:
         train_ai(args.datafile, args.epochs)
         if args.save == True:
-            saver = tf.compat.v1.train.Saver()
             saver.save(sess, args.model)
     else:
         saver.restore(sess, args.model)
     if do_run == True:
         run_ai()
-
-    
-
