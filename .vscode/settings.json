@@ -1,4 +1,5 @@
 {
   "python.linting.pylintEnabled": true,
-  "python.linting.enabled": true
+  "python.linting.enabled": true,
+  "python.pythonPath": "~/.local/share/virtualenvs/yomi-jWZ9Ybb8/bin/python"
 }
